@@ -18,6 +18,7 @@ import {
 } from 'react-redux'
 import { onSignIn } from './../reducers/rootReducer'
 
+console.log(`${import.meta.env.VITE_server}`)
 const Login=()=>{
 
 	const toast=useToast()
