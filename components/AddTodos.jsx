@@ -24,7 +24,7 @@ const AddTodos=React.memo(()=>{
 	const submitTodo=()=>{
 		if(todo.trim().length!=0){
 			const data={UserName,Task:todo.trim(),id:Math.round(Math.random()*1000)}
-			axios.post(`${import.meta.env.VITE_server}/add`,data)
+			axios.post(`${import.meta.env.VITE_server}add`,data)
 			.then((res)=>{
 				if(res.status>=200 && res.status<300)
 				   dispatch(Add(data))

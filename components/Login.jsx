@@ -33,7 +33,7 @@ const Login=()=>{
 
 	const authenticateUsers=async(vals)=>{
 
-		await axios.post(`${import.meta.env.VITE_server}/signin`,vals)
+		await axios.post(`${import.meta.env.VITE_server}signin`,vals)
 		.then((res)=>{
 			let response=res
 			console.log(res)

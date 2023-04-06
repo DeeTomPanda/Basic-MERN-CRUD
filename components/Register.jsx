@@ -30,7 +30,7 @@ const Register=()=>{
 	const registerUsers=async(vals)=>{
 		
 		alert(JSON.stringify(vals))
-		await axios.post(`${import.meta.env.VITE_server}/register`,vals)
+		await axios.post(`${import.meta.env.VITE_server}register`,vals)
 		.then((res)=>{
 			console.log(res.data)
 			navigateTo('/')},err=>console.log(err))

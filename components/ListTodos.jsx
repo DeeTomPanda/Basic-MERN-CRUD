@@ -36,7 +36,7 @@ const ListTodos=React.memo(()=>{
 		
 	const editTodo=()=>{
 		const data={UserName,Task:newTodo.value,id:newTodo.id}
-		axios.post(`${import.meta.env.VITE_server}/edit`,data)
+		axios.post(`${import.meta.env.VITE_server}edit`,data)
 		.then((res)=>{
 			if(res.status>=200 && res.status<300)
 				dispatch(Edit(newTodo))},
@@ -50,7 +50,7 @@ const ListTodos=React.memo(()=>{
 
 	const delTodo=(id)=>{
 		const data={UserName,id}
-		axios.post(`${import.meta.env.VITE_server}/delete`,data)
+		axios.post(`${import.meta.env.VITE_server}delete`,data)
 		.then((res)=>{
 			if(res.status>=200 && res.status<300)
 				dispatch(Delete(id))},
