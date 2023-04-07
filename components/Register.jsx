@@ -70,7 +70,7 @@ const Register=()=>{
 		   <Center h='inherit' w='inherit'>
 		      <Box display='flex' flexDirection='column' justifyContent='center' borderRadius='md'
 		       alignItems='center' 
-		       minHeight={['70vh','80vh']} w={['40vh','60vh']} bgGradient='linear(to-l, #B0DAFF, #e9e4f0)'>
+		       minHeight={['450px','80vh']} w={['40vh','60vh']} bgGradient='linear(to-l, #B0DAFF, #e9e4f0)'>
 		         <Heading ml='5px' mb='5px' alignSelf='flex-start' size='lg'>{"Register"}</Heading>
 		            <Fields formik={formik}/>
 		      </Box>

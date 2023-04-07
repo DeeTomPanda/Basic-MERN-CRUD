@@ -22,7 +22,7 @@ const Fields=(  { formik,Child } )=>{
 	return(
 		<form onSubmit={formik.handleSubmit}>
 		   <VStack mt={['10px','5px']} justifyContent='center' spacing={['10px','25px']} 
-		    h={['45vh','60vh']} w={['30vh','50vh']}>
+		    h={['300px','60vh']} w={['30vh','50vh']}>
 		    {formik.values.Name!=undefined?( 
 		     <FormControl h='15vh'>
 		        <FormLabel htmlFor='Name'>Name</FormLabel>
