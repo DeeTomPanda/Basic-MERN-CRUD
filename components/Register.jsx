@@ -40,12 +40,18 @@ const Register=()=>{
 				   duration:2000,
 				   description:"User Registration Successful"})
 			   navigateTo('/')}
+			else{
+			   toast({
+				title:"Error",
+				duration:2000,
+				description:err.message})
+			}
 		}
 		,(err)=>{
 			toast({
 				title:"Error",
 				duration:2000,
-				description:err})
+				description:err.response.data})
 			console.log(err)
 		})
 	}
