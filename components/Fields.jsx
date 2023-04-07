@@ -37,9 +37,7 @@ const Fields=(  { formik,Child } )=>{
 				  </Text>)
 				 :null}
 		     </FormControl>):null
-		    }
-		     
-		     
+		    }  
 		     <FormControl h='15vh'>
 		       <FormLabel htmlFor='UserName'>UserName</FormLabel>
 		       <Input errorBorderColor='red.100' isRequired name='UserName'

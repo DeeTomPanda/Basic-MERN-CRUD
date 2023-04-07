@@ -5,7 +5,8 @@ import {
 	Text,
 	Center,
 	VStack,
-	Heading
+	Heading,
+	useToast
 } from '@chakra-ui/react'
 import { 
 	useDispatch,
@@ -19,6 +20,8 @@ import { useNavigate } from "react-router-dom";
 const Register=()=>{
 
 	const navigateTo=useNavigate()
+	const toast=useToast()
+
 	const validationSchema=Yupp.object().shape({
 		UserName:Yupp.string().required("Required").min(6)
 		.test("UserName","No special characters",(val)=>!/[^\w]+/gi.test(val)),
@@ -29,11 +32,22 @@ const Register=()=>{
 
 	const registerUsers=async(vals)=>{
 		
-		alert(JSON.stringify(vals))
-		await axios.post(`${import.meta.env.VITE_server}/register`,vals)
+		axios.post(`${import.meta.env.VITE_server}/register`,vals)
 		.then((res)=>{
-			console.log(res.data)
-			navigateTo('/')},err=>console.log(err))
+			if(res.status>=200 && res.status<300){
+			   toast({
+				   title:"Success",
+				   duration:2000,
+				   description:"User Registration Successful"})
+			   navigateTo('/')}
+		}
+		,(err)=>{
+			toast({
+				title:"Error",
+				duration:2000,
+				description:err})
+			console.log(err)
+		})
 	}
 
 	const formik=useFormik({
@@ -50,9 +64,9 @@ const Register=()=>{
 		   <Center h='inherit' w='inherit'>
 		      <Box display='flex' flexDirection='column' justifyContent='center' borderRadius='md'
 		       alignItems='center' 
-		       h={['70vh','80vh']} w={['40vh','60vh']} bgGradient='linear(to-l, #B0DAFF, #e9e4f0)'>
+		       minHeight={['70vh','80vh']} w={['40vh','60vh']} bgGradient='linear(to-l, #B0DAFF, #e9e4f0)'>
 		         <Heading ml='5px' mb='5px' alignSelf='flex-start' size='lg'>{"Register"}</Heading>
-		            <Fields formik={formik} prop={<div>{"hello"}</div>}/>
+		            <Fields formik={formik}/>
 		      </Box>
 		   </Center>
 		</Box>)

@@ -39,9 +39,11 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 
 axios.interceptors.request.use(
 	req=>{
-		if(!( req.url.includes('register') || req.url.includes('login') )){
+		if( req.url.includes('add') || req.url.includes('edit') || req.url.includes('delete')  ){
 			const token=store.getState().token
 			req.headers.Authorization=token
 			return req}
+		else
+			return req
 	})
 

@@ -69,7 +69,7 @@ const Login=()=>{
 		   <Center h='inherit' w='inherit'>
 		      <Box display='flex' flexDirection='column' justifyContent='center' borderRadius='md'
 		       alignItems='center' 
-		       h={['60vh','80vh']} w={['40vh','60vh']} bgGradient='linear(to-l, #B0DAFF, #e9e4f0)'>
+		       minHeight={['60vh','80vh']} w={['40vh','60vh']} bgGradient='linear(to-l, #B0DAFF, #e9e4f0)'>
 		         <Heading ml='5px' alignSelf='flex-start' size='lg'>{"Login"}</Heading>
 		            <Fields formik={formik} 
 		             Child={()=><Text m='auto' fontSize={['sm','md']}>
