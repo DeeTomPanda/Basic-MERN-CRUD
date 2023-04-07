@@ -73,7 +73,7 @@ const ListTodos=React.memo(()=>{
 			   <ButtonGroup>
 			      <Button variant='ghost' size={['xs','sm']} 
 			       onClick={()=>{
-			       	setNewTodo({...newTodo,id:v.id})
+			       	setNewTodo({id:v.id,value:v.Task})
 			       	setIsOpen(true)}
 			       }>
 			          Edit
@@ -90,7 +90,7 @@ const ListTodos=React.memo(()=>{
 			         <ModalHeader>Edit Field</ModalHeader>
 			         <ModalCloseButton/>
 			         <ModalBody>
-			            <Input fontSize={['xs','md']} placeholder={v.Task} 
+			            <Input fontSize={['xs','md']} placeholder={newTodo.value} 
 			             onChange={(e)=>setNewTodo({...newTodo,value:e.target.value})}
 			            />
 			         </ModalBody>
